@@ -21,13 +21,23 @@ namespace krpoLaba6
         {
             return k % d;
         }
-
+        int folding(int k, int n)
+        {
+            int sum = 0;
+            while (k > 0)
+            {
+                sum += k % n;
+                k /= n;
+            }
+            return sum % n;
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             const int n = 1000;
             const int d = 997;
             const int k = 45678;
 
+            textBox3.Text = folding(k, n).ToString();
             textBox2.Text = midSquare(k, n).ToString();
             textBox1.Text = division(k, d).ToString();
         }
