@@ -17,6 +17,11 @@ namespace krpoLaba6
             return (int)(kSquare / (long)Math.Pow(10, deleteSize)) % n;
         }
 
+        int division(int k, int d)
+        {
+            return k % d;
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             const int n = 1000;
@@ -24,7 +29,7 @@ namespace krpoLaba6
             const int k = 45678;
 
             textBox2.Text = midSquare(k, n).ToString();
-
+            textBox1.Text = division(k, d).ToString();
         }
     }
 }
