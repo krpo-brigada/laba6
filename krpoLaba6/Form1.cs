@@ -6,5 +6,25 @@ namespace krpoLaba6
         {
             InitializeComponent();
         }
+
+        int midSquare(int k, int n)
+        {
+            long kSquare = (long)Math.Pow(k, 2);
+            if (kSquare < n) return (int)kSquare;
+            int squareSize = (int)Math.Log10(kSquare);
+            int adresSize = (int)Math.Log10(n);
+            int deleteSize = (squareSize - adresSize) / 2;
+            return (int)(kSquare / (long)Math.Pow(10, deleteSize)) % n;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            const int n = 1000;
+            const int d = 997;
+            const int k = 45678;
+
+            textBox2.Text = midSquare(k, n).ToString();
+
+        }
     }
 }
