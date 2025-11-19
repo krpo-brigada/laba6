@@ -17,6 +17,13 @@ namespace krpoLaba6
             return (int)(kSquare / (long)Math.Pow(10, deleteSize)) % n;
         }
 
+        int multi(int k, int n)
+        {
+            double A = (Math.Sqrt(5) - 1) / 2;
+            double D = (k * A) % 1;
+            return (int)(n * D);
+        }
+
         int division(int k, int d)
         {
             return k % d;
@@ -28,6 +35,7 @@ namespace krpoLaba6
             const int d = 997;
             const int k = 45678;
 
+            textBox4.Text = multi(k, n).ToString();
             textBox2.Text = midSquare(k, n).ToString();
             textBox1.Text = division(k, d).ToString();
         }
